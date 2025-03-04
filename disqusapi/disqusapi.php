@@ -75,7 +75,7 @@ class DisqusResource {
         if (!$resource) {
             throw new DisqusInterfaceNotDefined();
         }
-        $kwargs = (array)$args[0];
+        $kwargs = isset($args[0]) ? (array)$args[0] : array();
 
         foreach ((array)$resource->required as $k) {
             if (empty($kwargs[$k])) {
